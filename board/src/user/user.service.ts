@@ -31,8 +31,7 @@ export class UsersService {
     }
   }
 
-  async findByEmail(userFindByEmailDto: UserFindByEmailDto): Promise<User> {
-    const { email } = userFindByEmailDto;
+  async findByEmail(email: string): Promise<User> {
     const queryRunner = this.dataSource.createQueryRunner();
     await queryRunner.connect();
     await queryRunner.startTransaction();

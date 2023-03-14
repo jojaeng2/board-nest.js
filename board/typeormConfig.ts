@@ -1,6 +1,6 @@
 import { DataSourceOptions } from 'typeorm';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { User } from './src/user/User';
+import { User } from './src/user/users.entity';
 
 export const typeormConfig: TypeOrmModuleOptions | DataSourceOptions = {
   type: 'mysql',

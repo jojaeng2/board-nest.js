@@ -1,5 +1,4 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
-import { UserCreateDto } from './dto/user_create.dto';
 import { v1 as uuid } from 'uuid';
 
 @Entity()

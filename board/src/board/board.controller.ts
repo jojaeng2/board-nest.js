@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { BoardService } from './board.service';
+import { BoardCreateDto } from './dto/board.create.dto';
 
 @Controller('board')
 export class BoardController {
@@ -8,5 +9,11 @@ export class BoardController {
   @Get()
   getHello(): string {
     return 'Hello boardController!';
+  }
+
+  @Post()
+  async create(@Body() boardCreateDto: BoardCreateDto) {
+    await this.boardService.create(boardCreateDto);
+    return;
   }
 }

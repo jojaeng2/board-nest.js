@@ -1,6 +1,7 @@
 import { DataSourceOptions } from 'typeorm';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { User } from './src/user/users.entity';
+import { CommentEntity } from './src/comment/comment.entity';
 
 export const typeormConfig: TypeOrmModuleOptions | DataSourceOptions = {
   type: 'mysql',
@@ -11,5 +12,5 @@ export const typeormConfig: TypeOrmModuleOptions | DataSourceOptions = {
   database: 'test',
   synchronize: true,
   logging: true,
-  entities: [User],
+  entities: [User, CommentEntity],
 };

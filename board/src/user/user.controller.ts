@@ -21,7 +21,7 @@ export class UsersController {
   @Get(':email')
   async findUserByEmail(@Param() params): Promise<User> {
     const { email } = params;
-    console.log(email)
+    console.log(params);
     return this.userService.findByEmail(email);
   }
 }

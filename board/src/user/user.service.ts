@@ -39,6 +39,8 @@ export class UsersService {
     try {
       const user = await this.userRepository.findOneBy({ email: email });
       await queryRunner.commitTransaction();
+      console.log(user);
+      if (user == null) throw new Error('없는 회원 정보입니다.');
       return user;
     } catch (err) {
       await queryRunner.rollbackTransaction();

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn, Timestamp } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn, Timestamp } from 'typeorm';
+import { User } from '../user/users.entity';
 
 @Entity()
 export class CommentEntity {
@@ -6,8 +7,8 @@ export class CommentEntity {
   id: string;
 
   @Column()
-  time: Timestamp;
-
-  @Column()
   like: number;
+
+  @ManyToOne(() => User)
+  user: User;
 }
